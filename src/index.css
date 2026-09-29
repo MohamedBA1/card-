@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Cairo", sans-serif;
+  
+  /* Luxury Black-Gold-White Color Palette */
+  --color-primary-navy: #0A0A0A;
+  --color-royal-gold: #D4A82F;
+  --color-royal-gold-light: #F0C855;
+  --color-light-bg: #FFFFFF;
+}
+
+.dark {
+  --color-primary-navy: #f5f5f5;
+  --color-royal-gold: #FFD700;
+  --color-royal-gold-light: #FFEC8B;
+  --color-light-bg: #0a0a0a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode palette */
+    --color-primary-navy: #f5f5f5; /* light text */
+    --color-royal-gold: #FFD700; /* keep same or lighter */
+    --color-royal-gold-light: #FFEC8B;
+    --color-light-bg: #0a0a0a; /* dark background */
+  }
+  body {
+    background-color: var(--color-light-bg);
+    color: var(--color-primary-navy);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    background-color: var(--color-light-bg);
+    color: var(--color-primary-navy);
+    overflow-x: hidden;
+  }
+
+  /* Support RTL text adjustment smoothly */
+  [dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4A82F;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F0C855;
+}
+
+/* Luxury card reflection gloss */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 168, 47, 0.2);
+}
+
+.glass-panel-dark {
+  background: rgba(10, 10, 10, 0.90);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 168, 47, 0.25);
+}
+
+/* Golden text stroke or gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F0C855 0%, #D4A82F 45%, #A87820 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #F0C855 0%, #D4A82F 45%, #A87820 100%);
+}
+
+.bg-navy-gradient {
+  background: linear-gradient(160deg, #141414 0%, #0A0A0A 50%, #1A1A1A 100%);
+}
+
+.border-gold-gradient {
+  border-image: linear-gradient(135deg, #F0C855, #D4A82F, #A87820) 1;
+}
