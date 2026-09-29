@@ -9,7 +9,7 @@ interface QRCodeProps {
 }
 
 export default function QRCodeSection({ lang, t }: QRCodeProps) {
-  const [currentUrl, setCurrentUrl] = useState("http://49.12.208.188:7009/");
+  const [currentUrl, setCurrentUrl] = useState("https://card.ssamirmp1.workers.dev/");
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
